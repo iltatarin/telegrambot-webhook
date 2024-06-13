@@ -24,7 +24,6 @@
 - Вместо `{PUBLIC_URL}` - поставить публичный адрес
 
 Шаги:
-
 1. Проверить существуют ли webhook: `https://api.telegram.org/bot{BOT_TOKEN}/getWebhookInfo`
 2. Если есть webhook, то удалить: `https://api.telegram.org/bot{BOT_TOKEN}/setWebhook`
-3. Добавить новый webhook: `https://api.telegram.org/bot{BOT_TOKEN}/setWebhook?url={PUBLIC_URL}/{YOUR-TOKEN}/`
+3. Добавить новый webhook: `https://api.telegram.org/bot{BOT_TOKEN}/setWebhook?url={PUBLIC_URL}/{BOT_TOKEN}`
