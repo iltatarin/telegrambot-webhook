@@ -8,14 +8,14 @@ from const import (GUESS_NUMBER_IS_GREATER_MESSAGE,
                    GUESS_NUMBER_IS_LESS_MESSAGE, USER_GUESSED_MESSAGE,
                    WELCOME_MESSAGE)
 
-from app.db import create_guess_number, get_guess_number
+from db import create_guess_number, get_guess_number
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Переменные окружения
 BOT_TOKEN = getenv("BOT_TOKEN")     # необходимо указать в переменных окружения
-PORT = getenv("PORT")  # берется автоматически
+PORT = int(getenv("PORT"))  # берется автоматически
 
 # Бот
 bot = Bot(token=BOT_TOKEN)
@@ -79,7 +79,7 @@ async def handle_webhook_request(request):
 
 
 if __name__ == "__main__":
-    logger.info("Сервер запускается ...")
+    logger.info("Сервер заработал ...")
 
     app = web.Application()
     app.add_routes(routes)
